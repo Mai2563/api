@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 trait ExceptionTrait
 {
     public function apiException($request,$e)
-    {
+    { 
         if($this->isModel($e)){
            return $this->ModelResponse($e);
         }
@@ -17,6 +17,8 @@ trait ExceptionTrait
         if($this->isHttp($e)){
            return $this->HttpResponse($e);
         }
+        
+        return parent::render($request, $e);
         
     }
 
