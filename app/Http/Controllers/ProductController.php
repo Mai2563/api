@@ -65,7 +65,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Product $product)
-    {   $this->ProductUserCheck($product);
+    {  // $this->ProductUserCheck($product);
         return new ProductResource($product);
     }
 
