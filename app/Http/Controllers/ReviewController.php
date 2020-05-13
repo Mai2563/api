@@ -9,11 +9,16 @@ use App\Http\Resources\ReviewResource;
 use App\Http\Requests\ReviewRequest;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @group Reviews
+ *
+ * APIs for CRUD Reviews
+ */
 class ReviewController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
+     * Show Review 
+     * 
      * @return \Illuminate\Http\Response
      */
     public function index(Product $product)
@@ -21,18 +26,18 @@ class ReviewController extends Controller
         return ReviewResource::collection($product->reviews);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    // /**
+    //  * 
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function create()
+    // {
+    //     //
+    // }
 
     /**
-     * Store a newly created resource in storage.
+     * Create Review 
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -46,30 +51,30 @@ class ReviewController extends Controller
         ],Response::HTTP_CREATED);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Model\Review  $review
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Review $review)
-    {
-        //
-    }
+    // /**
+    //  * 
+    //  *
+    //  * @param  \App\Model\Review  $review
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function show(Review $review)
+    // {
+    //     //
+    // }
+
+    // /**
+    //  * 
+    //  *
+    //  * @param  \App\Model\Review  $review
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function edit(Review $review)
+    // {
+    //     //
+    // }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Model\Review  $review
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Review $review)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * Update Review 
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Model\Review  $review
@@ -84,7 +89,7 @@ class ReviewController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete Review 
      *
      * @param  \App\Model\Review  $review
      * @return \Illuminate\Http\Response

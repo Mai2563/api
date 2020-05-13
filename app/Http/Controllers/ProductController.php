@@ -11,6 +11,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Auth;
 use App\Exceptions\ProductNotBelongsToUser;
 
+/**
+ * @group Products
+ *
+ * APIs CRUD Products
+ */
 class ProductController extends Controller
 {
     public function __construct()
@@ -18,7 +23,7 @@ class ProductController extends Controller
         $this->middleware('auth:api')->except('index','show');
     }
     /**
-     * Display a listing of the resource.
+     * Show all products  
      *
      * @return \Illuminate\Http\Response
      */
@@ -27,18 +32,18 @@ class ProductController extends Controller
         return ProductCollection::Collection(Product::paginate(5));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    // /**
+    //  * 
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function create()
+    // {
+    //     //
+    // }
 
     /**
-     * Store a newly created resource in storage.
+     * Create Product 
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -59,7 +64,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Show the product details
      *
      * @param  \App\Model\Product  $product
      * @return \Illuminate\Http\Response
@@ -69,19 +74,19 @@ class ProductController extends Controller
         return new ProductResource($product);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Model\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Product $product)
-    {
-        //
-    }
+    // /**
+    //  * 
+    //  *
+    //  * @param  \App\Model\Product  $product
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function edit(Product $product)
+    // {
+    //     //
+    // }
 
     /**
-     * Update the specified resource in storage.
+     * Update Product 
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Model\Product  $product
@@ -99,7 +104,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete Product 
      *
      * @param  \App\Model\Product  $product
      * @return \Illuminate\Http\Response
